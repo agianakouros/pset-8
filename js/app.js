@@ -16,6 +16,8 @@ const winningConditions = [
 let board;
 let turn;
 let win;
+let xwins;
+let owins;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 
@@ -82,4 +84,9 @@ function getWinner() {
   });
 
   return winner ? winner : board.includes("") ? null : "T";
+
+  if (document.getElementById("test").innerHTML = "X wins!";) {
+   xwins++
+  }
+
 }
