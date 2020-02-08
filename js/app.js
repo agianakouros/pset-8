@@ -16,8 +16,9 @@ const winningConditions = [
 let board;
 let turn;
 let win;
-let xwins;
-let owins;
+let countingxwins = 0
+let countingowins = 0
+let switch_turn_count = 0
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 
@@ -31,62 +32,71 @@ document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
 
 ///////////////////// FUNCTIONS /////////////////////////////////////
-
 function init() {
-  board = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
+board = ["", "", "", "", "", "", "", "", ""];
+if (switch_turn_count == 0) {
   turn = "X";
-  win = null;
+}
+else if (switch_turn_count == 1) {
+  turn = "O"
+}
+win = null;
 
-  render();
+render();
+}
+function switch_turn() {
+if (switch_turn_count == 0) {
+  switch_turn_count = 1
+}
+else if (switch_turn_count == 1) {
+  switch_turn_count = 0
+}
+}
+function render() {
+board.forEach(function(mark, index) {
+  squares[index].textContent = mark;
+});
+if (win === "X") {
+  countingxwins = countingxwins + 1
+}
+else if (win === "O") {
+  countingowins = countingowins + 1
 }
 
-function render() {
-  board.forEach(function(mark, index) {
-    squares[index].textContent = mark;
-  });
+document.getElementById("owins").innerHTML = countingowins;
+document.getElementById("xwins").innerHTML = countingxwins;
 
-  message.textContent =
-    win === "T" ? "It's a tie!" : win ? `${win} wins!` : `Turn: ${turn}`;
+message.textContent =
+  win === "T" ? "It's a tie!" : win ? `${win} wins!` : `Turn: ${turn}`;
 }
 
 function takeTurn(e) {
-  if (!win) {
-    let index = squares.findIndex(function(square) {
-      return square === e.target;
-    });
+if (!win) {
+  let index = squares.findIndex(function(square) {
+    return square === e.target;
+  });
 
-    if (board[index] === "") {
-      board[index] = turn;
-      turn = turn === "X" ? "O" : "X";
-      win = getWinner();
-
-      render();
-    }
+  if (board[index] === "") {
+    board[index] = turn;
+    turn = turn === "X" ? "O" : "X";
+    win = getWinner();
+    render();
   }
+}
 }
 
 function getWinner() {
-  let winner = null;
+let winner = null;
 
-  winningConditions.forEach(function(condition, index) {
-    if (
-      board[condition[0]] &&
-      board[condition[0]] === board[condition[1]] &&
-      board[condition[1]] === board[condition[2]]
-    ) {
-      winner = board[condition[0]];
-    }
-  });
-
-  return winner ? winner : board.includes("") ? null : "T";
-
-  if (document.getElementById("test").innerHTML = "X wins!";) {
-   xwins++
+winningConditions.forEach(function(condition, index) {
+  if (
+    board[condition[0]] &&
+    board[condition[0]] === board[condition[1]] &&
+    board[condition[1]] === board[condition[2]]
+  ) {
+    winner = board[condition[0]];
   }
+});
 
+return winner ? winner : board.includes("") ? null : "T";
 }

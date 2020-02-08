@@ -91,16 +91,7 @@ h2 {
  * The reset button sits just below the board.
  */
 
-#reset-button {
-  background-color: coral;
-  border: 1px solid black;
-  color: black;
-  font-size: 21px;
-  line-height: 55px;
-  margin: 1%;
-  text-align: center;
-  width: 456px;
-}
+
 
 /*
  * And a little flare when the user mouses over the button. The color scheme
@@ -177,6 +168,9 @@ h2 {
    box-shadow: -6px 6px 0 #404040;
    text-decoration: none;
    position: relative;
+   font-size: 21px;
+   line-height: 55px;
+   margin: 1%;
  }
 
 .square {
