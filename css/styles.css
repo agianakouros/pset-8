@@ -182,3 +182,23 @@ h2 {
   width: 140px;
   color: white;
 }
+
+.select {
+text-align: right;
+}
+
+
+#xwins {
+  font-size: 45px;
+  font-weight: lighter;
+  margin: 2%;
+  color: white;
+}
+
+#owins {
+  font-size: 45px;
+  font-weight: lighter;
+  margin: 2%;
+  color: white;
+
+}
