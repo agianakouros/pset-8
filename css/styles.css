@@ -188,8 +188,10 @@ h2 {
   background-color: coral;
   width: 300px;
   border: 15px solid coral;
-  box-shadow: -10px 10px #404040;
+  box-shadow: -8px 8px 0 #404040;
   border-radius: 15px;
+  position: relative;
+  z-index: -1;
 }
 
 #xwins {
