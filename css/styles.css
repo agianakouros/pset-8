@@ -20,7 +20,7 @@ h1 {
   font-size: 48px;
   margin: 2%;
   color: white;
-  text-shadow: 2px 2px coral;
+  text-shadow: -4px 4px 3px coral;
 }
 
 /*
@@ -191,7 +191,6 @@ h2 {
   box-shadow: -10px 10px #404040;
   border-radius: 15px;
 }
-
 
 #xwins {
   font-size: 43px;
