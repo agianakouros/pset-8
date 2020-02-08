@@ -184,25 +184,25 @@ h2 {
 }
 
 .select {
-text-align: right;
+  float: right;
+  background-color: coral;
+  width: 300px;
+  border: 15px solid coral;
+  box-shadow: -10px 10px #404040;
 }
 
 
 #xwins {
   font-size: 43px;
   font-weight: lighter;
-  margin: 2%;
-  color: white;
+  margin: 1%;
   padding-bottom: 5px;
+  color: #404040;
 }
 
 #owins {
   font-size: 43px;
   font-weight: lighter;
-  margin: 2%;
-  color: white;
-
-
-
-
+  margin: 1%;
+  color: #404040;
 }
