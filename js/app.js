@@ -20,6 +20,7 @@ let countingxwins = 0
 let countingowins = 0
 let switch_turn_count = 0
 let starter = "X";
+let change = document.getElementById("orderbutton").innerHTML
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 
@@ -43,6 +44,9 @@ else if (switch_turn_count == 1) {
   turn = "O"
 }
 win = null;
+
+let neww = change.splice(16, 1, "X");
+document.getElementById("orderbutton").innerHTML = neww
 
 render();
 }
@@ -126,7 +130,7 @@ function changeOrder() {
         starter = "X"
     }
 
-    let change = document.getElementById("orderbutton").innerHTML
+
     let neww = change.splice(16, 1, starter);
     document.getElementById("orderbutton").innerHTML = neww
 
