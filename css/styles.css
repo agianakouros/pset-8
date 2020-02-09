@@ -262,7 +262,7 @@ h2 {
 }
 
 #change-order-button {
-  width: 200px;
+  width: 300px;
   text-align: center;
   background-color: coral;
   border: 2px solid;
@@ -276,8 +276,8 @@ h2 {
   box-shadow: -6px 6px 0 #404040;
   text-decoration: none;
   position: relative;
-  font-size: 21px;
-  line-height: 55px;
-  margin: 3%;
+  line-height: 140px;
+  margin: 5%;
   height: 140px;
+  font-size: 20px;
 }

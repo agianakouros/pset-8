@@ -126,6 +126,11 @@ function changeOrder() {
         turn = "X";
         starter = "X"
     }
-    document.getElementById("change-order-button").innerHTML = starter;
+    let change = document.getElementById("change-order-button").innerHTML
+
+    let neww = change.splice(16, 1, starter);
+
+    document.getElementById("change-order-button").innerHTML = neww
+
     render();
 }
