@@ -31,7 +31,7 @@ const message = document.querySelector("h2");   // grab the subheader
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
-document.getElementById("change-order-button").onclick = changeOrder;
+document.getElementById("orderbutton").onclick = changeOrder;
 
 ///////////////////// FUNCTIONS /////////////////////////////////////
 function init() {
@@ -121,16 +121,14 @@ function changeOrder() {
     if (starter === "X") {
         turn = "O";
         starter = "O";
-    }
-    else {
+    } else {
         turn = "X";
         starter = "X"
     }
-    let change = document.getElementById("change-order-button").innerHTML
 
+    let change = document.getElementById("orderbutton").innerHTML
     let neww = change.splice(16, 1, starter);
-
-    document.getElementById("change-order-button").innerHTML = neww
+    document.getElementById("orderbutton").innerHTML = neww
 
     render();
 }
