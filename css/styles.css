@@ -187,6 +187,7 @@ h2 {
   float: right;
   background-color: coral;
   width: 300px;
+  height: 120px;
   border: 15px solid coral;
   border-radius: 15px;
   position: relative;
@@ -278,4 +279,5 @@ h2 {
   font-size: 21px;
   line-height: 55px;
   margin: 3%;
+  height: 140px;
 }
