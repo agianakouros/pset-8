@@ -19,6 +19,7 @@ let win;
 let countingxwins = 0
 let countingowins = 0
 let switch_turn_count = 0
+let starter = "X";
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 
@@ -30,6 +31,7 @@ const message = document.querySelector("h2");   // grab the subheader
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
+document.getElementById("change-order-button").onclick = changeOrder;
 
 ///////////////////// FUNCTIONS /////////////////////////////////////
 function init() {
@@ -112,4 +114,18 @@ winningConditions.forEach(function(condition, index) {
 });
 
 return winner ? winner : board.includes("") ? null : "T";
+}
+
+function changeOrder() {
+    init();
+    if (starter === "X") {
+        turn = "O";
+        starter = "O";
+    }
+    else {
+        turn = "X";
+        starter = "X"
+    }
+    document.getElementById("change-order-button").innerHTML = starter;
+    render();
 }
