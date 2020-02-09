@@ -25,7 +25,7 @@ let change = document.getElementById("orderbutton").innerHTML
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 
 const squares = Array.from(document.querySelectorAll("#board div"));
-const message = document.querySelector("h2");   // grab the subheader
+const message = document.querySelector("h2");
 
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 
@@ -50,15 +50,15 @@ document.getElementById("orderbutton").innerHTML = neww
 
 render();
 }
+
 function switch_turn() {
-  
+
   if (switch_turn_count == 0) {
   switch_turn_count = 1
 } else if (switch_turn_count == 1) {
   switch_turn_count = 0
 }
 }
-
 
 String.prototype.splice = function(idx, rem, str) {
     return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
@@ -83,7 +83,6 @@ let new2 = change1.splice(8, 1, countingowins);
 
 document.getElementById("xwins").innerHTML = new1;
 document.getElementById("owins").innerHTML = new2;
-
 
 message.textContent =
   win === "T" ? "It's a tie!" : win ? `${win} wins!` : `Turn: ${turn}`;
@@ -129,7 +128,6 @@ function changeOrder() {
         turn = "X";
         starter = "X"
     }
-
 
     let neww = change.splice(16, 1, starter);
     document.getElementById("orderbutton").innerHTML = neww
