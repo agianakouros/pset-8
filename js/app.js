@@ -37,12 +37,12 @@ document.getElementById("orderbutton").onclick = changeOrder;
 ///////////////////// FUNCTIONS /////////////////////////////////////
 function init() {
 board = ["", "", "", "", "", "", "", "", ""];
-if (switch_turn_count == 0) {
+  if (switch_turn_count == 0) {
   turn = "X";
-}
-else if (switch_turn_count == 1) {
+} else if (switch_turn_count == 1) {
   turn = "O"
 }
+
 win = null;
 
 let neww = change.splice(16, 1, "X");
@@ -51,10 +51,10 @@ document.getElementById("orderbutton").innerHTML = neww
 render();
 }
 function switch_turn() {
-if (switch_turn_count == 0) {
+  
+  if (switch_turn_count == 0) {
   switch_turn_count = 1
-}
-else if (switch_turn_count == 1) {
+} else if (switch_turn_count == 1) {
   switch_turn_count = 0
 }
 }
@@ -68,10 +68,10 @@ function render() {
 board.forEach(function(mark, index) {
   squares[index].textContent = mark;
 });
-if (win === "X") {
+
+  if (win === "X") {
   countingxwins = countingxwins + 1
-}
-else if (win === "O") {
+} else if (win === "O") {
   countingowins = countingowins + 1
 }
 
